@@ -6,8 +6,15 @@
         {{ message }}
       </h1>
       <h2 class="subtitle">
-        My fantabulous Nuxt.js project
+        {{ $store.state.hello.message }}
       </h2>
+      <button
+        class="button--green"
+        style="font-size: 16px; font-family: 'Source Sans Pro';"
+        @click="$store.dispatch('hello/updateMessage', 'dispatch with payload')"
+      >
+        Update
+      </button>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">
           Documentation
@@ -33,13 +40,13 @@ import Logo from "~/components/Logo.vue";
 
 export default {
   components: {
-    Logo
+    Logo,
   },
   data() {
     return {
-      message: "Price Page"
+      message: "Price Page",
     };
-  }
+  },
 };
 </script>
 
