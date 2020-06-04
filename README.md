@@ -1,6 +1,6 @@
-# udemy-nuxt
+# udemy-nuxt2
 
-> My fantabulous Nuxt.js project
+> My perfect Nuxt.js project
 
 ## Build Setup
 

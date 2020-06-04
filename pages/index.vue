@@ -3,13 +3,17 @@
     <div>
       <logo />
       <h1 class="title">
-        {{ message }}
+        udemy-nuxt2
       </h1>
       <h2 class="subtitle">
-        My fantabulous Nuxt.js project
+        My perfect Nuxt.js project
       </h2>
       <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
+        <a
+          href="https://nuxtjs.org/"
+          target="_blank"
+          class="button--green"
+        >
           Documentation
         </a>
         <a
@@ -20,27 +24,18 @@
           GitHub
         </a>
       </div>
-      <div class="links">
-        <router-link to="/price" class="button--green">Price Page</router-link>
-        <router-link to="/mypage" class="button--grey">My Page</router-link>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
+import Logo from '~/components/Logo.vue'
 
 export default {
   components: {
-    Logo,
-  },
-  data() {
-    return {
-      message: "Hello World!!",
-    };
-  },
-};
+    Logo
+  }
+}
 </script>
 
 <style>
@@ -54,7 +49,8 @@ export default {
 }
 
 .title {
-  font-family: "M PLUS 1p", sans-serif;
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
