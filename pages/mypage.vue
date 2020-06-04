@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <logo />
+      <img src="~/assets/onikai.jpg" alt="onikai" />
       <h1 class="title">
         {{ message }}
       </h1>
@@ -32,14 +32,11 @@
 import Logo from "~/components/Logo.vue";
 
 export default {
-  components: {
-    Logo
-  },
   data() {
     return {
-      message: "My Page"
+      message: "My Page",
     };
-  }
+  },
 };
 </script>
 

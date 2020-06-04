@@ -24,22 +24,45 @@
         <router-link to="/price" class="button--green">Price Page</router-link>
         <router-link to="/mypage" class="button--grey">My Page</router-link>
       </div>
+      <div style="padding-top: 15px;">
+        <ul>
+          <li
+            style="list-style-type: none;"
+            v-for="user in users"
+            :key="user.id"
+          >
+            {{ user.id }}, {{ user.name }}, {{ user.company.name }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import Logo from "~/components/Logo.vue";
+
+const url = "https://jsonplaceholder.typicode.com/users";
 
 export default {
   components: {
-    Logo
+    Logo,
   },
   data() {
     return {
-      message: "Users index"
+      message: "Users",
     };
-  }
+  },
+  asyncData({ error }) {
+    return axios
+      .get(url)
+      .then((res) => ({ users: res.data }))
+      .catch((e) => {
+        console.log(e.response.status);
+        error({ status: e.response.status, message: e.message });
+      });
+  },
 };
 </script>
 

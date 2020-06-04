@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        {{ message + " " + this.$route.params.id }}
+        {{ users[this.$route.params.id - 1].name }}
       </h1>
       <h2 class="subtitle">
         My fantabulous Nuxt.js project
@@ -24,25 +24,32 @@
         <router-link to="/price" class="button--green">Price Page</router-link>
         <router-link to="/mypage" class="button--grey">My Page</router-link>
       </div>
+      <div style="padding-top: 15px;">{{ users[this.$route.params.id - 1] }}</div>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
+import axios from 'axios';
+import Logo from '~/components/Logo.vue';
+
+const url = 'https://jsonplaceholder.typicode.com/users';
 
 export default {
   components: {
-    Logo
+    Logo,
   },
   data() {
     return {
-      message: "User"
+      message: 'User',
     };
+  },
+  asyncData() {
+    return axios.get(url).then((res) => ({ users: res.data }));
   },
   validate({ params }) {
     return /^\d+$/.test(params.id);
-  }
+  },
 };
 </script>
 
