@@ -24,14 +24,18 @@
         <router-link to="/price" class="button--green">Price Page</router-link>
         <router-link to="/" class="button--grey">Top Page</router-link>
       </div>
+      <Counter></Counter>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from "~/components/Logo.vue";
+import Counter from "~/components/Counter.vue";
 
 export default {
+  components: {
+    Counter,
+  },
   data() {
     return {
       message: "My Page",
